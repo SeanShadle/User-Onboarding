@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import Form from './Components/Form'
+import User from './Components/User'
 import schema from './Validation/formSchema'
 import axios from 'axios'
 import * as yup from 'yup'
@@ -93,6 +94,14 @@ useEffect(() => {
         disabled={disabled}
         errors={formErrors}
       />
+
+      {
+        users.map(user => {
+          return (
+            <User key={user.id} details={user} />
+          )
+        })
+      }
     </div>
   );
 }

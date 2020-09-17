@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 export default function Form(props){
     const {
@@ -47,9 +47,9 @@ export default function Form(props){
                 <label>Email
                     <input 
                         value={values.email}
-                        onchange={onChange}
+                        onChange={onChange}
                         name="email"
-                        type="text"
+                        type="email"
                     />
                 </label>
 
