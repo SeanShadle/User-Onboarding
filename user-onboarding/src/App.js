@@ -10,15 +10,15 @@ const initialFormValues = {
   username: '',
   email: '',
   password: '',
-  terms: false,
   role: '',
+  terms: false,
 }
 const initialFormErrors = {
   username: '',
   email: '',
   password: '',
-  terms: '',
   role: '',
+  terms: '',
 }
 const initialUsers = []
 const initialDisabled = true
@@ -72,8 +72,8 @@ const formSubmit = () => {
     username: formValues.username.trim(),
     email: formValues.email.trim(),
     password: formValues.password,
+    role: formValues.role,
     terms: formValues.terms,
-    role: formValues.role
   }
   postNewUser(newUser)
 }
