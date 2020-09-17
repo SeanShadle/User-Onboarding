@@ -24,18 +24,18 @@ export default function Form(props){
         <form className="form container" onSubmit={onSubmit}>
             <div className='form-group submit'>
                 <h2>New User</h2>
-                <button disabled={disabled}>submit</button>
+                <h4>General information</h4>
                 <div className='errors'>
                     <div>{errors.username}</div>
                     <div>{errors.email}</div>
                     <div>{errors.password}</div>
                     <div>{errors.terms}</div>
+                    <div>{errors.role}</div>
                 </div>
             </div>
 
             <div className='form-group inputs'>
-                <h4>General information</h4>
-                <label>Username
+                <label>Username:
                     <input
                         value={values.username}
                         onChange={onChange}
@@ -44,7 +44,7 @@ export default function Form(props){
                     />
                 </label>
 
-                <label>Email
+                <label>Email:
                     <input 
                         value={values.email}
                         onChange={onChange}
@@ -53,8 +53,9 @@ export default function Form(props){
                     />
                 </label>
 
-                <label>Password
+                <label>Password:
                     <input
+                        id='password'
                         value={values.password}
                         onChange={onChange}
                         name='password'
@@ -62,14 +63,33 @@ export default function Form(props){
                     />
                 </label>
 
+                <label>Role:
+                    <select
+                        id='role'
+                        value={values.role}
+                        onChange={onChange}
+                        name='role'
+                    >
+                        <option value=''>-Select an option-</option>
+                        <option value='Front-end Dev'>Front-end Developer</option>
+                        <option value='Back-end Dev'>Back-end Developer</option>
+                        <option value='Designer'>Designer</option>
+                        <option value='Project Manager'>Project Manager</option>
+                        <option value='Scrum Master'>Scrum Master</option>
+                    </select>
+                </label>
+
                 <label>Terms of Service
                     <input 
+                        id='terms'
                         value={values.terms}
                         onChange={onChange}
                         name='terms'
-                        type='radio'
+                        type='checkbox'
+                        checked={values.terms}
                     />
                 </label>
+                <button disabled={disabled}>submit</button>
             </div>
         </form>
 
